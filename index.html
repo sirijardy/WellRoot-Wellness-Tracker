@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WellRoot - Wellness Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>🌿 WellRoot</h2>
+    <p>Grow well. Live balanced.</p>
+
+    <img src="sprout.png" alt="Little Sprout mascot" class="sprout">
+    <p class="welcome">Grow a little every day! 💚</p>
+
+    <div class="side-box">
+      <h3>🌸 Daily Motivation</h3>
+      <p id="quote">Small steps every day lead to big changes.</p>
+      <button onclick="changeQuote()">New Quote ✨</button>
+    </div>
+
+    <div class="side-box">
+      <h3>💡 Healthy Living Tips</h3>
+      <p>💧 Drink water regularly.</p>
+      <p>🚶 Move your body daily.</p>
+      <p>😴 Aim for 7–9 hours of sleep.</p>
+      <p>🍎 Eat a variety of foods.</p>
+      <p>🧘 Take breaks and relax.</p>
+      <p>🌞 Spend time outdoors.</p>
+      <p>📵 Take screen breaks.</p>
+      <p>💚 Make time for yourself.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <div>
+        <h1>Daily Wellness Dashboard 🌿</h1>
+        <p>Take care of yourself, one day at a time.</p>
+      </div>
+      <span class="today">✨ Your Healthy Day</span>
+    </header>
+
+    <section class="summary">
+      <div><p>💧 Water</p><h2 id="waterSummary">0 L</h2></div>
+      <div><p>🏃 Exercise</p><h2 id="exerciseSummary">0 min</h2></div>
+      <div><p>😴 Sleep</p><h2 id="sleepSummary">0 hrs</h2></div>
+    </section>
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>💧 Water Tracker</h3>
+        <p>Daily goal: 2 litres</p>
+        <h2 id="waterAmount">0 L</h2>
+        <div class="progress"><div id="waterBar"></div></div>
+        <button onclick="changeWater(0.25)">+ 250 ml</button>
+        <button class="light" onclick="changeWater(-0.25)">− 250 ml</button>
+        <p id="waterMessage"></p>
+      </div>
+
+      <div class="card">
+        <h3>🍎 Food Tracker</h3>
+        <input id="foodName" placeholder="Food name">
+        <input id="calories" type="number" min="0" placeholder="Calories">
+        <input id="protein" type="number" min="0" placeholder="Protein (g)">
+        <button onclick="addFood()">Add Food</button>
+        <ul id="foodList"></ul>
+        <p id="foodTotal">Calories: 0 | Protein: 0 g</p>
+      </div>
+
+      <div class="card">
+        <h3>🏃 Exercise Tracker</h3>
+        <input id="exerciseName" placeholder="Activity name">
+        <input id="exerciseMinutes" type="number" min="1" placeholder="Minutes">
+        <button onclick="addExercise()">Add Exercise</button>
+        <ul id="exerciseList"></ul>
+        <p id="exerciseTotal">0 / 30 minutes</p>
+        <div class="progress"><div id="exerciseBar"></div></div>
+        <p id="exerciseMessage"></p>
+      </div>
+
+      <div class="card">
+        <h3>😴 Sleep Tracker</h3>
+        <p>Daily goal: 8 hours</p>
+        <input id="sleepHours" type="number" min="0" max="24" step="0.5" placeholder="Hours slept">
+        <button onclick="saveSleep()">Save Sleep</button>
+        <h2 id="sleepAmount">0 hours</h2>
+        <div class="progress"><div id="sleepBar"></div></div>
+        <p id="sleepMessage"></p>
+      </div>
+
+      <div class="card">
+        <h3>📅 Daily Schedule</h3>
+        <input id="taskName" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+      </div>
+
+      <div class="card">
+        <h3>🌱 Daily Habits</h3>
+        <label><input class="habit" type="checkbox"> Drink enough water</label>
+        <label><input class="habit" type="checkbox"> Exercise today</label>
+        <label><input class="habit" type="checkbox"> Eat balanced meals</label>
+        <label><input class="habit" type="checkbox"> Sleep on time</label>
+        <p id="habitMessage">0 of 4 completed</p>
+        <p id="habitProgress">0% completed</p>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Why WellRoot? 🌿</h3>
+      <p>Just like roots help a plant grow, small healthy habits help us grow stronger every day.</p>
+      <b>Keep growing, you're doing great! 💚✨</b>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
